@@ -3,28 +3,38 @@
     <head>
         <meta charset='UTF-8'>
 	<title>Pomo Time</title>
+	<link rel='stylesheet' href='style.css'>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     </head>
     <body>
-	    <h1>Pomodoro!</h1>
-	    <button id='about'>What's Pomodoro?</button>
-	    <div id='explain'>
-		<p>The Pomodoro method is for time management.</p>
-		<p>You work nonstop for 25 minutes 
-		Then you take a short break - 5 minutes.</p>
-		<p>After four iterations (called pomodoros), 
-		take a longer break - 10 minutes!</p>
-		
-                <button id='close'>Close</button>
+	    <div id='main'>
+	        <h1>Pomodoro!</h1>
+	        <button id='about'>What's Pomodoro?</button>
+	        <div id='explain'>
+		    <p>The Pomodoro method is for time management.</p>
+		    <p>You work nonstop for 25 minutes 
+		    Then you take a short break - 5 minutes.</p>
+		    <p>After four iterations (called pomodoros), 
+		    take a longer break - 10 minutes!</p>
+                    <button id='close'>Close</button>
+	        </div>
+
+	        <div id='time-options'>
+	            <button id='work' class='time-option'>Work</button>
+	            <button id='short' class='time-option'>Short Break</button>
+	            <button id='long' class='time-option'>Long Break</button>
+                </div>
+
+	        <img id='Pomo'src='tomato-work.png'>
+	        <h1 id='timer'>Time: </h1>
+
+	        <div id='timer-funcs'>
+	            <button id='start'>Start</button>
+	            <button id='stop'>Stop</button>
+	            <button id='reset'>Reset</button>
+                </div>
 	    </div>
-	    <button id='work'>Work</button>
-	    <button id='short'>Short Break</button>
-	    <button id='long'>Long Break</button>
-	    <img id='Pomo'src='tomato-work.png'>
-	    <h1 id='timer'>Time: </h1>
-	    <button id='start'>Start</button>
-	    <button id='stop'>Stop</button>
-	    <button id='reset'>Reset</button>
+
 	    <div id='sound'></div>
 	    <script src="index.js"></script>
     </body>

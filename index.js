@@ -17,12 +17,23 @@ function playSound(filename) {
 var handler = function() {
   var currMins = parseInt(CURRENT_TIME / 60);
   var currSecs = parseInt(CURRENT_TIME % 60);
-  document.getElementById('timer').textContent = 'Time: ' + 
-      (currMins < 10 ? "0" + currMins : currMins) + ":" 
-          + (currSecs < 10 ? "0" + currSecs : currSecs);
-  CURRENT_TIME--;
-  if (CURRENT_TIME < 0)
-      playSound('jingles_NES08');
+  document.getElementById('timer').textContent = 'Time: ' +
+     (currMins < 10 ? "0" + currMins : currMins) + ":"
+      + (currSecs < 10 ? "0" + currSecs : currSecs);
+  if (RUNNING) {
+    CURRENT_TIME--;
+    if (CURRENT_TIME < 0) {
+	CURRENT_TIME = CHOSEN_TIME;
+        playSound('jingles_NES08');
+	clearInterval(timer);
+        RUNNING = false;
+	var currMins = parseInt(CURRENT_TIME / 60);
+        var currSecs = parseInt(CURRENT_TIME % 60);
+        document.getElementById('timer').textContent = 'Time: ' +
+          (currMins < 10 ? "0" + currMins : currMins) + ":"
+            + (currSecs < 10 ? "0" + currSecs : currSecs);
+    }
+  }
 };
 
 $(document).ready( function() {
@@ -64,6 +75,7 @@ $(document).ready( function() {
 
    $('#start').click( function() {
        if (!RUNNING) {
+	   clearInterval(timer);
            timer = setInterval(handler, 1000);
            RUNNING = true;
        }

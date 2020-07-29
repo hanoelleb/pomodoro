@@ -16,8 +16,6 @@ var handler = function() {
   CURRENT_TIME--;
 };
 
-//handler();
-
 $(document).ready( function() {
     var timer = setInterval(handler, 1000);
 
@@ -34,18 +32,24 @@ $(document).ready( function() {
     });
 
     $('#work').click( function() {
-        $('#timer').text('Time: 25:00');
+        CURRENT_TIME = WORK_TIME;
+        CHOSEN_TIME = CURRENT_TIME;
+	handler();
         $('#Pomo').attr('src', 'tomato-work.png');
 
     });
 
     $('#short').click( function() {
-        $('#timer').text('Time: 5:00');
+        CURRENT_TIME = SHORT_TIME;
+        CHOSEN_TIME = CURRENT_TIME;
+	handler();
         $('#Pomo').attr('src', 'tomato-short.png');
     });
 
     $('#long').click( function() {
-        $('#timer').text('Time: 10:00');
+        CURRENT_TIME = LONG_TIME;
+        CHOSEN_TIME = CURRENT_TIME;
+	handler();
         $('#Pomo').attr('src', 'tomato-long.png')
     });
 

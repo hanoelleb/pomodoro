@@ -7,6 +7,13 @@ var CHOSEN_TIME = CURRENT_TIME;
 
 var RUNNING = true;
 
+function playSound(filename) {
+   var oggSource = '<source src="' + filename + '.ogg" type="audio/ogg">';
+   var embedSource = '<embed hidden="true" autostart="true" loop="false" src="'       + filename +'.mp3">';
+   document.getElementById("sound").innerHTML='<audio autoplay="autoplay">' + 
+       oggSource + embedSource + '</audio>';
+}
+
 var handler = function() {
   var currMins = parseInt(CURRENT_TIME / 60);
   var currSecs = parseInt(CURRENT_TIME % 60);
@@ -14,6 +21,8 @@ var handler = function() {
       (currMins < 10 ? "0" + currMins : currMins) + ":" 
           + (currSecs < 10 ? "0" + currSecs : currSecs);
   CURRENT_TIME--;
+  if (CURRENT_TIME < 0)
+      playSound('jingles_NES08');
 };
 
 $(document).ready( function() {

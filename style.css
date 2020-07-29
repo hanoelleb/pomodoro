@@ -37,7 +37,8 @@ button {
   border-radius: 5px;
   width: 66vw;
   left: 18vw;
-  top: 15vw; }
+  top: 15vw;
+  z-index: 1; }
   #explain p {
     margin-left: 10px;
     margin-right: 10px; }

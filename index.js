@@ -56,6 +56,7 @@ $(document).ready( function() {
         CHOSEN_TIME = CURRENT_TIME;
 	handler();
         $('#Pomo').attr('src', 'tomato-work.png');
+	$('#Pomo').attr('class', 'PomoWork');
 
     });
 
@@ -64,6 +65,7 @@ $(document).ready( function() {
         CHOSEN_TIME = CURRENT_TIME;
 	handler();
         $('#Pomo').attr('src', 'tomato-short.png');
+	$('#Pomo').attr('class', 'PomoRest');
     });
 
     $('#long').click( function() {
@@ -71,6 +73,7 @@ $(document).ready( function() {
         CHOSEN_TIME = CURRENT_TIME;
 	handler();
         $('#Pomo').attr('src', 'tomato-long.png')
+	$('#Pomo').attr('class', 'PomoSleep');
     });
 
    $('#start').click( function() {

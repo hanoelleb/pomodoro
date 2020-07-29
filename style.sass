@@ -70,3 +70,32 @@ button
 #timer
     margin-bottom: 10px
     margin-top: 10px
+
+.PomoWork
+    animation: pomo-jump 0.75s infinite
+
+.PomoRest
+    animation: pomo-rest 2s infinite
+
+.PomoSleep
+    animation: pomo-nap 4s
+    animation-fill-mode: forwards
+
+@keyframes pomo-jump
+    0%, 100% 
+        transform: translate(0, 0)
+    
+    50%
+        transform: translate(0, 10px)
+
+@keyframes pomo-rest
+    0%, 100%
+        transform: rotate(10deg) translate(10px, 0)
+    50%
+        transform: rotate(-10deg) translate(-10px, 0)
+
+@keyframes pomo-nap
+    from
+        transform: rotate(0deg) translate(0, 0)
+    to
+        transform: rotate(-45deg) translate(-30px, -10px)
